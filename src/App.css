@@ -1,0 +1,110 @@
+/* To avoid overflow in small devices */
+@media only screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  .container {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.search {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.searchBox {
+  width: 35vw;
+  border: 1px solid;
+  border-radius: 50px;
+}
+
+.searchButton {
+  width: 12vw;
+  font-size: larger;
+}
+
+@media screen and (min-device-width: 542px) and (max-device-width: 1099px) {
+  .searchBox {
+    width: 50vw;
+  }
+  .searchButton {
+    width: 15vw;
+  }
+}
+
+@media screen and (min-device-width: 0px) and (max-device-width: 541px) {
+  .searchBox {
+    width: 80vw;
+  }
+  .searchButton {
+    width: 25vw;
+  }
+}
+.userBlock {
+  background-color: white;
+  left: 0;
+  right: 0;
+  top: 50%;
+  /* bottom: 0; */
+  position: absolute;
+  padding: 30px;
+  border: 1.5px solid black;
+  border-radius: 10px;
+}
+
+.dp {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+/* Rankwise Colorcodes */
+.newbie {
+  color: grey;
+}
+
+.pupil {
+  color: green;
+}
+
+.specialist {
+  color: cyan;
+}
+
+.expert {
+  color: blue;
+}
+
+.candidate_master {
+  color: violet;
+}
+
+.master {
+  color: orange;
+}
+
+.international_master {
+  color: orange;
+}
+
+.grandmaster {
+  color: red;
+}
+
+.international_grandmaster {
+  color: red;
+}
+
+.legendary_grandmaster {
+  color: red;
+}
