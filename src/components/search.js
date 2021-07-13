@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 
-import { Link } from "react-router-dom";
-
 function Search(props) {
   const style = {
     textAlign: "center",
@@ -22,8 +20,8 @@ function Search(props) {
 
   return (
     <div>
-      <Container>
-        <Form className="search" onSubmit={handleSubmit}>
+      <Container className="search">
+        <Form onSubmit={handleSubmit}>
           <h4 style={style}>Codeforces Username</h4>
           <Form.Group>
             <Form.Control

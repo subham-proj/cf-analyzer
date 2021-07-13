@@ -16,11 +16,9 @@ body {
 }
 
 .search {
-  position: fixed;
-  top: 25%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .searchBox {
@@ -51,16 +49,32 @@ body {
     width: 25vw;
   }
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap");
 .userBlock {
-  background-color: white;
-  left: 0;
-  right: 0;
-  top: 50%;
-  /* bottom: 0; */
-  position: absolute;
-  padding: 30px;
-  border: 1.5px solid black;
-  border-radius: 10px;
+  flex: 0;
+  padding-top: 50px;
+  height: auto;
+  font-family: "Roboto Mono", monospace;
+}
+
+.footer {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  height: auto;
+}
+
+.footerLayout {
+  padding-top: 50px;
+}
+
+.footer a {
+  color: white;
 }
 
 .dp {

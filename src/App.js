@@ -4,12 +4,12 @@ import "./App.css";
 import Header from "./components/header";
 import User from "./components/user";
 import Search from "./components/search";
+import Footer from "./components/footer";
 
 function App() {
   const baseURL = "https://codeforces.com/api/user.info?handles=";
 
   const [user, setUser] = useState({});
-  const [handle, setHandle] = useState("");
 
   const onSearch = async (handle) => {
     const requestURL = baseURL + handle;
@@ -20,7 +20,6 @@ function App() {
     // handling exception caused by invalid username.
     if (responseJSON.status === "OK") {
       setUser(responseJSON.result[0]);
-      setHandle(handle);
       // console.log(routePath);
     } else {
       alert("Not Found");
@@ -33,7 +32,9 @@ function App() {
 
       <Search onSearch={onSearch} />
 
-      <User user={user} handle={handle} />
+      <User user={user} />
+
+      <Footer />
     </div>
   );
 }
