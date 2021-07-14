@@ -1,6 +1,9 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 
+import moment from "moment";
+import Moment from "react-moment";
+
 import blog from "../assets/blog.png";
 import mail from "../assets/mail.png";
 
@@ -115,6 +118,22 @@ function User({ user }) {
                   )
                 </h5>
                 <h5>Friends of : {user.friendOfCount} users</h5>
+                <h5>
+                  Last Visit :{" "}
+                  <Moment fromNow>
+                    {moment(user.lastOnlineTimeSeconds + "000", "x").format(
+                      "DD MMM YYYY hh:mm a"
+                    )}
+                  </Moment>
+                </h5>
+                <h5>
+                  Registered :{" "}
+                  <Moment fromNow>
+                    {moment(user.registrationTimeSeconds + "000", "x").format(
+                      "DD MMM YYYY hh:mm a"
+                    )}
+                  </Moment>
+                </h5>
                 <br></br>
                 <br></br>
                 <img
@@ -188,5 +207,3 @@ function User({ user }) {
 }
 
 export default User;
-
-// https://codeforces.com/usertalk?other=coder_99

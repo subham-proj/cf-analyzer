@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "./App.css";
 
 import Header from "./components/header";
-import User from "./components/user";
 import Search from "./components/search";
+import Generic from "./components/generic";
+import User from "./components/user";
 import Footer from "./components/footer";
 
 function App() {
@@ -31,9 +32,8 @@ function App() {
       <Header />
 
       <Search onSearch={onSearch} />
-
-      <User user={user} />
-
+      <Generic />
+      {user.handle ? <User user={user} /> : ""}
       <Footer />
     </div>
   );
