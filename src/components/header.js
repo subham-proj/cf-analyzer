@@ -7,7 +7,7 @@ function header() {
     <div>
       <Container>
         <Navbar bg="light" variant="light">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img
               alt="logo"
               src={Logo}

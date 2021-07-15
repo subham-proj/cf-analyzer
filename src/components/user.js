@@ -74,7 +74,7 @@ function User({ user }) {
     maxRankColor = "legendary_grandmaster";
   }
 
-  const blogURL = "https://codeforces.com/usertalk?other=" + user.handle;
+  const blogURL = "https://codeforces.com/blog/" + user.handle;
   const commentURL = "https://codeforces.com/comments/with/" + user.handle;
   const talksURL = "https://codeforces.com/usertalk/with/" + user.handle;
   const messageURL = "https://codeforces.com/usertalk?other=" + user.handle;
@@ -89,7 +89,7 @@ function User({ user }) {
                 <h4 className={rank}>{user.rank}</h4>
                 <h3>{user.handle}</h3>
                 <h5>
-                  {user.firstName ? "Name : " + user.firstName : ""}
+                  {user.firstName ? "Name: " + user.firstName : ""}
                   {user.lastName
                     ? user.firstName
                       ? " " + user.lastName
@@ -97,41 +97,41 @@ function User({ user }) {
                     : ""}
                 </h5>
                 <h5>
-                  {user.city ? "Place : " + user.city : ""}
+                  {user.city ? "Place: " + user.city : ""}
                   {user.country
                     ? user.city
                       ? ", " + user.country
-                      : "Place : " + user.country
+                      : "Place: " + user.country
                     : ""}
                 </h5>
                 <h5>
                   {user.organization
-                    ? "Organization : " + user.organization
+                    ? "Organization: " + user.organization
                     : ""}
                 </h5>
                 <h5>
-                  Rating : <span className={ratingColor}>{user.rating}</span>{" "}
+                  Rating: <span className={ratingColor}>{user.rating}</span>{" "}
                   (max.{" "}
                   <span className={maxRankColor}>
                     {user.maxRank}, {user.maxRating}
                   </span>
                   )
                 </h5>
-                <h5>Friends of : {user.friendOfCount} users</h5>
+                <h5>Friends of: {user.friendOfCount} users</h5>
                 <h5>
-                  Last Visit :{" "}
+                  Last Visit:{" "}
                   <Moment fromNow>
-                    {moment(user.lastOnlineTimeSeconds + "000", "x").format(
-                      "DD MMM YYYY hh:mm a"
-                    )}
+                    {moment
+                      .unix(user.lastOnlineTimeSeconds)
+                      .format("DD MMM YYYY hh:mm a")}
                   </Moment>
                 </h5>
                 <h5>
-                  Registered :{" "}
+                  Registered:{" "}
                   <Moment fromNow>
-                    {moment(user.registrationTimeSeconds + "000", "x").format(
-                      "DD MMM YYYY hh:mm a"
-                    )}
+                    {moment
+                      .unix(user.registrationTimeSeconds)
+                      .format("DD MMM YYYY hh:mm a")}
                   </Moment>
                 </h5>
                 <br></br>
@@ -188,7 +188,7 @@ function User({ user }) {
                 <br></br>
               </Col>
 
-              <Col sm={4}>
+              <Col sm={4} style={{ padding: "20px" }}>
                 <div className="dp">
                   <img
                     src={user.titlePhoto}

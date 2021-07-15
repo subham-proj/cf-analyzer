@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Container, Table } from "react-bootstrap";
-import Moment from "react-moment";
 import moment from "moment";
 
 function Generic() {
@@ -47,16 +46,16 @@ function Generic() {
           <tbody>
             {contest.reverse().map((contest) => (
               <tr key={contest.id}>
-                <td>{(count += 1)}</td>
+                <td>{++count}</td>
                 <td>{contest.name}</td>
                 <td>
-                  {moment(contest.startTimeSeconds + "000", "x").format(
-                    "DD MMM YYYY hh:mm a"
-                  )}
+                  {moment
+                    .unix(contest.startTimeSeconds)
+                    .format("DD MMM YYYY hh:mm a")}
                 </td>
                 <td>
                   {moment
-                    .duration(contest.durationSeconds * 1000)
+                    .duration(contest.durationSeconds, "seconds")
                     .format("hh:mm")}
                 </td>
               </tr>
