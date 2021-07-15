@@ -6,6 +6,7 @@ import Search from "./components/search";
 import Generic from "./components/generic";
 import User from "./components/user";
 import Rating from "./components/rating";
+import Stats from "./components/stats";
 import Verdict from "./components/verdict";
 
 import Footer from "./components/footer";
@@ -73,7 +74,7 @@ function App() {
 
         <Row style={{ paddingTop: "40px" }}>
           <Col lg={6} md={12} xs={12} sm={12}>
-            {" "}
+            {user.handle ? <Stats rating={rating} /> : ""}
           </Col>
           <Col lg={6} md={12} xs={12} sm={12}>
             {user.handle ? <Verdict data={verdicts} /> : ""}

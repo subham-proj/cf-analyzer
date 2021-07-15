@@ -36,7 +36,7 @@ function Verdict({ data }) {
   ];
 
   return (
-    <div>
+    <div style={{ paddingTop: "50px" }}>
       <Card>
         <Card.Body>
           <Doughnut
