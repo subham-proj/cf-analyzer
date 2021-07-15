@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 
 import moment from "moment";
 import Moment from "react-moment";
@@ -80,128 +80,123 @@ function User({ user }) {
   const messageURL = "https://codeforces.com/usertalk?other=" + user.handle;
 
   return (
-    <div style={{ paddingBottom: "40px" }}>
-      <Container className="userBlock">
-        <Card>
-          <Card.Body>
-            <Row>
-              <Col sm={8}>
-                <h4 className={rank}>{user.rank}</h4>
-                <h3>{user.handle}</h3>
-                <h5>
-                  {user.firstName ? "Name: " + user.firstName : ""}
-                  {user.lastName
-                    ? user.firstName
-                      ? " " + user.lastName
-                      : ""
-                    : ""}
-                </h5>
-                <h5>
-                  {user.city ? "Place: " + user.city : ""}
-                  {user.country
-                    ? user.city
-                      ? ", " + user.country
-                      : "Place: " + user.country
-                    : ""}
-                </h5>
-                <h5>
-                  {user.organization
-                    ? "Organization: " + user.organization
-                    : ""}
-                </h5>
-                <h5>
-                  Rating: <span className={ratingColor}>{user.rating}</span>{" "}
-                  (max.{" "}
-                  <span className={maxRankColor}>
-                    {user.maxRank}, {user.maxRating}
-                  </span>
-                  )
-                </h5>
-                <h5>Friends of: {user.friendOfCount} users</h5>
-                <h5>
-                  Last Visit:{" "}
-                  <Moment fromNow>
-                    {moment
-                      .unix(user.lastOnlineTimeSeconds)
-                      .format("DD MMM YYYY hh:mm a")}
-                  </Moment>
-                </h5>
-                <h5>
-                  Registered:{" "}
-                  <Moment fromNow>
-                    {moment
-                      .unix(user.registrationTimeSeconds)
-                      .format("DD MMM YYYY hh:mm a")}
-                  </Moment>
-                </h5>
-                <br></br>
-                <br></br>
-                <img
-                  src={blog}
-                  width="22px"
-                  height="22px"
-                  style={{ marginRight: "0.5em" }}
-                  alt="blog"
-                />
-                <a
-                  href={blogURL}
-                  style={{ textDecoration: "underline" }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Blog entries
-                </a>
-                ,{" "}
-                <a
-                  href={commentURL}
-                  style={{ textDecoration: "underline" }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Comments
-                </a>
-                <br></br>
-                <img
-                  src={mail}
-                  width="22px"
-                  height="22px"
-                  style={{ marginRight: "0.5em" }}
-                  alt="blog"
-                />
-                <a
-                  href={talksURL}
-                  style={{ textDecoration: "underline" }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Talks
-                </a>
-                ,{" "}
-                <a
-                  href={messageURL}
-                  style={{ textDecoration: "underline" }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Send message
-                </a>
-                <br></br>
-              </Col>
+    <div className="userBlock">
+      <Card>
+        <Card.Body>
+          <Row>
+            <Col sm={8}>
+              <h4 className={rank}>{user.rank}</h4>
+              <h3>{user.handle}</h3>
+              <h5>
+                {user.firstName ? "Name: " + user.firstName : ""}
+                {user.lastName
+                  ? user.firstName
+                    ? " " + user.lastName
+                    : ""
+                  : ""}
+              </h5>
+              <h5>
+                {user.city ? "Place: " + user.city : ""}
+                {user.country
+                  ? user.city
+                    ? ", " + user.country
+                    : "Place: " + user.country
+                  : ""}
+              </h5>
+              <h5>
+                {user.organization ? "Organization: " + user.organization : ""}
+              </h5>
+              <h5>
+                Rating: <span className={ratingColor}>{user.rating}</span> (max.{" "}
+                <span className={maxRankColor}>
+                  {user.maxRank}, {user.maxRating}
+                </span>
+                )
+              </h5>
+              <h5>Friends of: {user.friendOfCount} users</h5>
+              <h5>
+                Last Visit:{" "}
+                <Moment fromNow>
+                  {moment
+                    .unix(user.lastOnlineTimeSeconds)
+                    .format("DD MMM YYYY hh:mm a")}
+                </Moment>
+              </h5>
+              <h5>
+                Registered:{" "}
+                <Moment fromNow>
+                  {moment
+                    .unix(user.registrationTimeSeconds)
+                    .format("DD MMM YYYY hh:mm a")}
+                </Moment>
+              </h5>
+              <br></br>
+              <br></br>
+              <img
+                src={blog}
+                width="22px"
+                height="22px"
+                style={{ marginRight: "0.5em" }}
+                alt="blog"
+              />
+              <a
+                href={blogURL}
+                style={{ textDecoration: "underline" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Blog entries
+              </a>
+              ,{" "}
+              <a
+                href={commentURL}
+                style={{ textDecoration: "underline" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Comments
+              </a>
+              <br></br>
+              <img
+                src={mail}
+                width="22px"
+                height="22px"
+                style={{ marginRight: "0.5em" }}
+                alt="blog"
+              />
+              <a
+                href={talksURL}
+                style={{ textDecoration: "underline" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Talks
+              </a>
+              ,{" "}
+              <a
+                href={messageURL}
+                style={{ textDecoration: "underline" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Send message
+              </a>
+              <br></br>
+            </Col>
 
-              <Col sm={4} style={{ padding: "20px" }}>
-                <div className="dp">
-                  <img
-                    src={user.titlePhoto}
-                    width="100%"
-                    height="100%"
-                    alt="dp"
-                  />
-                </div>
-              </Col>
-            </Row>
-          </Card.Body>
-        </Card>
-      </Container>
+            <Col sm={4} style={{ padding: "20px" }}>
+              <div className="dp">
+                <img
+                  src={user.titlePhoto}
+                  width="100%"
+                  height="100%"
+                  alt="dp"
+                />
+              </div>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
     </div>
   );
 }

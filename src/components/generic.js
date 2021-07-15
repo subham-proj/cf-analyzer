@@ -32,7 +32,7 @@ function Generic() {
   return (
     <div>
       <Container>
-        <h3>Upcoming Contest</h3>
+        <h3>ᴜᴘᴄᴏᴍɪɴɢ ᴄᴏɴᴛᴇꜱᴛ</h3>
         <br></br>
         <Table striped bordered hover variant="dark">
           <thead>

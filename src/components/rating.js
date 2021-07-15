@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Container } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 import moment from "moment";
 import { Line } from "react-chartjs-2";
@@ -16,52 +16,50 @@ function Rating({ rating }) {
   // console.log(a);
 
   return (
-    <div>
-      <Container fluid style={{ padding: "40px" }}>
-        <Card style={{ width: "700px", height: "400px" }}>
-          <Card.Body>
-            <Line
-              data={{
-                labels: b,
-                datasets: [
-                  {
-                    label: "Rating Change",
-                    data: a,
-                    borderWidth: 0.5,
-                    borderColor: "rgb(255,0,0)",
-                    hoverBackgroundColor: "rgba(0, 0, 0, 1)",
-                    pointRadius: 3,
-                    pointHoverBackgroundColor: "rgba(0, 0, 0, 1)",
-                  },
-                ],
-              }}
-              height={400}
-              width={400}
-              options={{
-                maintainAspectRatio: false,
-                scales: {
-                  x: {
-                    ticks: {
-                      display: false,
-                    },
-                    grid: {
-                      display: false,
-                    },
-                  },
+    <div style={{ paddingTop: "50px" }}>
+      <Card style={{ width: "100%", height: "100%" }}>
+        <Card.Body>
+          <Line
+            data={{
+              labels: b,
+              datasets: [
+                {
+                  label: "Rating Change",
+                  data: a,
+                  borderWidth: 0.5,
+                  borderColor: "rgb(255,0,0)",
+                  hoverBackgroundColor: "rgba(0, 0, 0, 1)",
+                  pointRadius: 3,
+                  pointHoverBackgroundColor: "rgba(0, 0, 0, 1)",
                 },
-                plugins: {
-                  legend: {
+              ],
+            }}
+            height={400}
+            width={400}
+            options={{
+              maintainAspectRatio: false,
+              scales: {
+                x: {
+                  ticks: {
+                    display: false,
+                  },
+                  grid: {
                     display: false,
                   },
                 },
-                layout: {
-                  padding: 10,
+              },
+              plugins: {
+                legend: {
+                  display: false,
                 },
-              }}
-            />
-          </Card.Body>
-        </Card>
-      </Container>
+              },
+              layout: {
+                padding: 10,
+              },
+            }}
+          />
+        </Card.Body>
+      </Card>
     </div>
   );
 }
