@@ -2,30 +2,34 @@ import React from "react";
 import { Card } from "react-bootstrap";
 
 function Stats({ rating }) {
-  let totalContest = rating.length;
-  let bestRank = rating[0].rank;
-  let worstRank = rating[0].rank;
+  let totalContest, bestRank, worstRank, bestRatingChange, worstRatingChange;
 
-  let bestRatingChange = rating[0].newRating - rating[0].oldRating;
-  let worstRatingChange = rating[0].newRating - rating[0].oldRating;
+  if (rating.length >= 1) {
+    totalContest = rating.length;
+    bestRank = rating[0].rank;
+    worstRank = rating[0].rank;
 
-  for (let i = 1; i < rating.length; i++) {
-    if (rating[i].rank < bestRank) {
-      bestRank = rating[i].rank;
-    }
+    bestRatingChange = rating[0].newRating - rating[0].oldRating;
+    worstRatingChange = rating[0].newRating - rating[0].oldRating;
 
-    if (rating[i].rank > worstRank) {
-      worstRank = rating[i].rank;
-    }
+    for (let i = 1; i < rating.length; i++) {
+      if (rating[i].rank < bestRank) {
+        bestRank = rating[i].rank;
+      }
 
-    let temp = rating[i].newRating - rating[i].oldRating;
+      if (rating[i].rank > worstRank) {
+        worstRank = rating[i].rank;
+      }
 
-    if (temp > bestRatingChange) {
-      bestRatingChange = temp;
-    }
+      let temp = rating[i].newRating - rating[i].oldRating;
 
-    if (temp < worstRatingChange) {
-      worstRatingChange = temp;
+      if (temp > bestRatingChange) {
+        bestRatingChange = temp;
+      }
+
+      if (temp < worstRatingChange) {
+        worstRatingChange = temp;
+      }
     }
   }
 

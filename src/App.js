@@ -8,6 +8,7 @@ import User from "./components/user";
 import Rating from "./components/rating";
 import Stats from "./components/stats";
 import Verdict from "./components/verdict";
+import Heatmap from "./components/heatmap";
 
 import Footer from "./components/footer";
 import { Row, Col, Container } from "react-bootstrap";
@@ -80,6 +81,9 @@ function App() {
             {user.handle ? <Verdict data={verdicts} /> : ""}
           </Col>
         </Row>
+      </Container>
+      <Container fluid="md">
+        {user.handle ? <Heatmap data={verdicts} /> : ""}
       </Container>
 
       <Footer />
