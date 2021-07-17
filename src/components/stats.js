@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 
 function Stats({ rating }) {
   // declaring variables outside if case otherwise it will throw an error of undeclared variable
