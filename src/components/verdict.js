@@ -9,7 +9,7 @@ function Verdict({ data }) {
     tle = 0,
     ce = 0,
     re = 0;
-
+  // counting different type of verdicts and storing them in different variables to make a doughnut representation out of it
   for (let i = 0; i < data.length; i++) {
     if (data[i].testset === "TESTS") {
       if (data[i].verdict === "OK") ac++;
@@ -27,6 +27,8 @@ function Verdict({ data }) {
   // console.log(ce);
   // console.log(re);
   const totalVerdicts = [ac, wa, tle, ce, re];
+
+  // labels array for doughnut graph
   const types = [
     "ACCEPTED",
     "WRONG ANSWER",

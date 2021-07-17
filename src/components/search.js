@@ -12,6 +12,7 @@ function Search(props) {
 
   const [handle, setHandle] = useState("");
 
+  // setting the prop when the search is submitted
   const handleSubmit = (event) => {
     event.preventDefault();
     // console.log("handle : " + handle);

@@ -15,12 +15,14 @@ body {
   background-color: #f8f9fa;
 }
 
+/* Search Box positioning */
 .search {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Search box and button styling */
 .searchBox {
   width: 35vw;
   border: 1px solid;
@@ -31,6 +33,8 @@ body {
   width: 12vw;
   font-size: larger;
 }
+
+/* Search box and button styling for different breakpoints */
 
 @media screen and (min-device-width: 542px) and (max-device-width: 1099px) {
   .searchBox {
@@ -50,6 +54,7 @@ body {
   }
 }
 
+/* Profile Card styling */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap");
 .userBlock {
   flex: 0;
@@ -58,6 +63,7 @@ body {
   font-family: "Roboto Mono", monospace;
 }
 
+/* Footer styling */
 .footer {
   background-color: black;
   display: flex;
@@ -77,12 +83,13 @@ body {
   color: white;
 }
 
+/* Profile Image Styling */
 .dp {
   padding: 10px;
   border: 1px solid black;
 }
 
-/* Rankwise Colorcodes */
+/* Rankwise color-codes */
 .newbie {
   color: grey;
 }
@@ -125,22 +132,38 @@ body {
 
 /* Rankwise Colorcodes ends */
 
+/* Cards shadow */
+
 .card {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
     0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
     0 16px 16px rgba(0, 0, 0, 0.12);
 }
 
+/* Table shadow */
 .table {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
     0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
     0 16px 16px rgba(0, 0, 0, 0.12);
 }
 
+/* Stats styling */
 .statsData {
   color: red;
   font-weight: bold;
 }
+
+table.stats {
+  background-color: white;
+}
+
+table.stats td {
+  padding: 20px;
+  font-size: large;
+  font-family: "Roboto Mono", monospace;
+}
+
+/* Activity graph styling */
 
 .react-calendar-heatmap {
   font-size: xx-small;
@@ -161,6 +184,8 @@ body {
 .react-calendar-heatmap .color-scale-4 {
   fill: #1e6823;
 }
+
+/* year selector in heatmap */
 
 .year {
   float: right;

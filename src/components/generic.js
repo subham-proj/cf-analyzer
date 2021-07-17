@@ -3,10 +3,12 @@ import { Container, Table } from "react-bootstrap";
 import moment from "moment";
 
 function Generic() {
+  // api to fetch contest
   const baseURL = "https://codeforces.com/api/contest.list?gym=false";
 
   const [allContest, setAllContest] = useState([]);
 
+  // fetching all contest and setting the state as array
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(baseURL);
@@ -17,6 +19,7 @@ function Generic() {
     fetchData();
   }, []);
 
+  // since we want only upcoming contest so here the logic is checking for contest yet to happend and assign them to another array
   const contest = [];
 
   for (let i = 0; i < allContest.length; i++) {
@@ -27,7 +30,8 @@ function Generic() {
     }
   }
 
-  let count = 0;
+  let count = 0; //counter for table index
+
   //   console.log(contest);
   return (
     <div>
@@ -44,16 +48,20 @@ function Generic() {
             </tr>
           </thead>
           <tbody>
+            {/** printing in reverse because we want data in LIFO order */}
             {contest.reverse().map((contest) => (
               <tr key={contest.id}>
                 <td>{++count}</td>
                 <td>{contest.name}</td>
                 <td>
+                  {/** setting time from second to a particular format using moment.js */}
                   {moment
                     .unix(contest.startTimeSeconds)
                     .format("DD MMM YYYY hh:mm a")}
                 </td>
                 <td>
+                  {/** setting duration from second to hour-minutes using moment.js */}
+
                   {moment
                     .duration(contest.durationSeconds, "seconds")
                     .format("hh:mm")}

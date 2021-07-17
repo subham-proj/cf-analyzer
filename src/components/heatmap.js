@@ -50,7 +50,7 @@ function Heatmap({ data }) {
       year.push(key);
     }
 
-    console.log(year);
+    // console.log(year);
     // console.log(countData[0]);
   }
 
@@ -68,7 +68,7 @@ function Heatmap({ data }) {
     }
   }
 
-  // console.log(displayYear);
+  // console.log(username + "-->" + displayYear);
   return (
     <div style={{ paddingTop: "50px" }}>
       <Card style={{ padding: "20px" }}>

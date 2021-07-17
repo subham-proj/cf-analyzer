@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "CF-Analyzer",
+  "name": "Codeforces Analyzer",
+  "description": "This apps lets you search user with their coderforces handle and displays data fetched from their profile",
   "icons": [
     {
       "src": "favicon.ico",

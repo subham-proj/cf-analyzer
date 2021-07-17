@@ -8,8 +8,10 @@ import blog from "../assets/blog.png";
 import mail from "../assets/mail.png";
 
 function User({ user }) {
+  // declaring variables
   let rank, ratingColor, maxRankColor;
 
+  // setting className for different rank to change colours
   if (user.rank === "newbie") {
     rank = "newbie";
     ratingColor = rank;
@@ -52,6 +54,9 @@ function User({ user }) {
     maxRankColor = rank;
   }
 
+  // setting className for different rank to change colours
+  // we could have done it using the same loop but since it has completly different values that's why doing it separetly
+
   if (user.maxRank === "newbie") {
     maxRankColor = "newbie";
   } else if (user.maxRank === "pupil") {
@@ -74,6 +79,7 @@ function User({ user }) {
     maxRankColor = "legendary_grandmaster";
   }
 
+  // some url for redirecting to users page
   const blogURL = "https://codeforces.com/blog/" + user.handle;
   const commentURL = "https://codeforces.com/comments/with/" + user.handle;
   const talksURL = "https://codeforces.com/usertalk/with/" + user.handle;
