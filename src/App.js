@@ -61,8 +61,8 @@ function App() {
       <Header />
 
       <Search onSearch={onSearch} />
+      {user.handle ? "" : <Generic />}
 
-      <Generic />
       <Container fluid>
         <Row>
           <Col lg={6} md={12} xs={12} sm={12}>
