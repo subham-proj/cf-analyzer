@@ -75,10 +75,10 @@ function App() {
 
         <Row style={{ paddingTop: "40px" }}>
           <Col lg={6} md={12} xs={12} sm={12}>
-            {user.handle ? <Stats rating={rating} /> : ""}
+            {user.rating ? <Stats rating={rating} /> : ""}
           </Col>
           <Col lg={6} md={12} xs={12} sm={12}>
-            {user.handle ? <Verdict data={verdicts} /> : ""}
+            {user.rating ? <Verdict data={verdicts} /> : ""}
           </Col>
         </Row>
       </Container>

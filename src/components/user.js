@@ -91,7 +91,7 @@ function User({ user }) {
         <Card.Body>
           <Row>
             <Col sm={8}>
-              <h4 className={rank}>{user.rank}</h4>
+              <h4 className={rank}>{user.rank ? user.rank : "unrated"}</h4>
               <h3>{user.handle}</h3>
               <h5>
                 {user.firstName ? "Name: " + user.firstName : ""}
@@ -113,11 +113,15 @@ function User({ user }) {
                 {user.organization ? "Organization: " + user.organization : ""}
               </h5>
               <h5>
-                Rating: <span className={ratingColor}>{user.rating}</span> (max.{" "}
+                Rating:{" "}
+                <span className={ratingColor}>
+                  {user.rating ? user.rating : "unrated"}
+                </span>{" "}
+                {user.rating ? "(max. " : ""}
                 <span className={maxRankColor}>
-                  {user.maxRank}, {user.maxRating}
+                  {user.rating ? user.maxRank + ", " + user.maxRating : ""}
                 </span>
-                )
+                {user.rating ? ")" : ""}
               </h5>
               <h5>Friends of: {user.friendOfCount} users</h5>
               <h5>
