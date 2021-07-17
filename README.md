@@ -2,11 +2,11 @@
 
 ## About
 
-### This is the repository of Codeforces Analyzer web app. It is created using [Codeforces](https://codeforces.com/) API
+#### This is the repository of Codeforces Analyzer web app. It is created using [Codeforces](https://codeforces.com/) API
 
-### Tech stack : React.js and Bootstrap
+#### Tech stack : React.js and Bootstrap
 
-### It is hosted on : [Click Here]()
+#### It is hosted on : [Click Here]()
 
 ## Features
 
